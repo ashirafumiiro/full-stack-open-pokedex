@@ -1,9 +1,13 @@
 name: Deployment pipeline
 
 on:
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
+
 
 jobs:
   simple_deployment_pipeline:
@@ -34,3 +38,4 @@ jobs:
           heroku_email: "ashirafumiiro@gmail.com"
           healthcheck: "https://pokedex-ma.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
