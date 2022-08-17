@@ -32,4 +32,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "pokedex-ma"
           heroku_email: "ashirafumiiro@gmail.com"
-          # usedocker: true
+          healthcheck: "https://pokedex-ma.herokuapp.com/health"
+          checkstring: "ok"
